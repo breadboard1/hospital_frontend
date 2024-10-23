@@ -140,3 +140,33 @@ footer{
     color:white;
     border-radius:5px;
 }
+
+.login-container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    gap: 20px;
+    align-items:center;
+    width:75%;
+    margin:auto;
+}
+
+.input{
+    padding:15px 25px;
+    border: none;
+    margin:10px;
+    box-shadow:4px 4px 8px grey;
+    border-radius:5px;
+}
+
+
+.submit-btn{
+    padding:15px 25px;
+    width: 80%;
+    margin:auto;
+    border:none;
+    background-color:orange;
+    color:white;
+    font-size:20px;
+    border-radius:10px;
+}
