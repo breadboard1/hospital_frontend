@@ -61,8 +61,7 @@ const displayDoctors = (doctors) =>{
                 return `<button>${item}</button>`;
             })}
             </p>
-
-            <button>Details</button>
+            <button><a target="_blank" href="./doctor_details.html?doctorID=${doctor.id}">Details</a></button>
         `;
         parent.appendChild(div);
     });
