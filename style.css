@@ -62,12 +62,13 @@ menu{
 }
 
 .doc-card{
-    width: 400px;
+    width: 370px;
     height : 400px;
     box-shadow:4px 4px 8px grey;
     border-radius:10px;
     text-align:center;
     padding:15px;
+    background:rgb(183, 136, 230);
 }
 
 .doc-img{
@@ -80,4 +81,39 @@ menu{
     padding:10px;
     width:50%;
     border:none;
+}
+
+.no-data{
+    display:none;
+}
+
+.loading{
+    display:none;
+}
+
+.nodata-img{
+    width:500px;
+    height:450px;
+    border-radius:10px;
+}
+
+.review-card{
+    width:200px;
+    height:400px;
+    box-shadow:4px 4px 8px grey;
+    border-radius:10px;
+    text-align:center;
+    padding:10px;
+    background:white;
+}
+
+.review-card img{
+    width:70px;
+    height:70px;
+    border-radius:35px;
+}
+
+footer{
+    padding:50px;
+    background:linear-gradient(66deg, #1CA8C7 -5.25%, #439FA5 46.76%, #4C7D8C 98.77%);
 }

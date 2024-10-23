@@ -28,9 +28,21 @@ const displayService = (services) => {
 
 
 const loadDoctors = (search) =>{
+    document.getElementById("doctors").innerHTML = "";
+    document.getElementById("loading").style.display="block";
     fetch(`https://testing-8az5.onrender.com/doctor/list/?search=${search ? search : ""}`)
     .then((res) => res.json())
-    .then((data) => displayDoctors(data?.results));
+    .then((data) => {
+        if(data.results.length > 0){
+            displayDoctors(data?.results);
+            document.getElementById("no-data").style.display="none";
+        }
+        else{
+            document.getElementById("doctors").innerHTML = "";
+            document.getElementById("no-data").style.display="block";
+        }
+        document.getElementById("loading").style.display="none";
+    });
 };
 
 const displayDoctors = (doctors) =>{
@@ -65,11 +77,13 @@ const loadDesignation = () =>{
             const parent = document.getElementById("drop-deg");
             const li = document.createElement("li");
             li.classList.add("dropdown-item");
-            li.innerHTML = item?.name;
+            li.innerHTML = `
+            <li onclick="loadDoctors('${item.name}')">${item.name}</li>
+            `;
             parent.appendChild(li);
-        })
+        });
     });
-}
+};
 
 const loadSpecialization = () =>{
     fetch("https://testing-8az5.onrender.com/doctor/specialization/")
@@ -79,19 +93,45 @@ const loadSpecialization = () =>{
             const parent = document.getElementById("drop-spe");
             const li = document.createElement("li");
             li.classList.add("dropdown-item");
-            li.innerHTML = item?.name;
+            li.innerHTML = `
+            <li onclick="loadDoctors('${item.name}')">${item.name}</li>
+            `;
             parent.appendChild(li);
         })
     });
-}
+};
 
 const handleSearch = () =>{
     const value = document.getElementById("search").value;
     loadDoctors(value);
-}
+};
+
+
+const loadReviews = () =>{
+    fetch("https://testing-8az5.onrender.com/doctor/review/")
+    .then((res) => res.json())
+    .then((data) => displayReview(data));
+};
+
+
+const displayReview = (reviews) => {
+    reviews.forEach((review) => {
+        const parent = document.getElementById("review-container");
+        const div = document.createElement("div");
+        div.classList.add("review-card")
+        div.innerHTML = `
+            <img src="./hospitao_frontend/doctor.jpeg">
+            <h4>${review.reviewer}</h4>
+            <p>${review.body.slice(0, 200)}</p>
+            <h6>${review.rating}</h6>
+        `;
+        parent.appendChild(div);
+    });
+};
 
 
 loadServices();
 loadDoctors();
 loadDesignation();
 loadSpecialization();
+loadReviews();
