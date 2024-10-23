@@ -1,4 +1,4 @@
-# Hospital Information Project
+<h1 style="text-align:center;">Hospital Information Project</h1>
 
 ## Overview
 This project is designed to collect and display detailed information about a hospital. Users can create accounts, book appointments (online or offline), and view details such as doctor visit fees and appointment times. The data is fetched through an API and presented dynamically using JavaScript for a clean and responsive front-end experience.
