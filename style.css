@@ -1,0 +1,83 @@
+body{
+    background:rgb(240, 235, 335);
+}
+
+li{
+    list-style:none;
+}
+
+nav{
+    background-color:aqua;
+}
+
+menu{
+    font-size:20px;
+}
+
+.menu:hover{
+    color:red;
+    cursor:pointer;
+}
+
+.banner-container{
+    width:1200px;
+    margin:auto;
+    padding: 30px;
+}
+
+.banner{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(aqua, white);
+    box-shadow:4px, 4px, 8px, grey;
+    border-radius:10px;
+    height: 500px;
+}
+.bn-imag{
+    width: 550px;
+}
+
+.service-container{
+    width: 1200px;
+    margin:auto;
+    margin-top:50px;
+}
+
+.title{
+    font-size: 60px;
+    color:aqua;
+    text-align:center;
+}
+
+.doctor-container{
+    margin-top:50px;
+    padding:30px;
+}
+
+.doctor-container{
+    margin-top:50px;
+    padding:30px;
+}
+
+.doc-card{
+    width: 400px;
+    height : 400px;
+    box-shadow:4px 4px 8px grey;
+    border-radius:10px;
+    text-align:center;
+    padding:15px;
+}
+
+.doc-img{
+    width:100px;
+    height:100px;
+    border-radius:50px;
+}
+
+#search{
+    padding:10px;
+    width:50%;
+    border:none;
+}
