@@ -3,7 +3,7 @@ const getParams = () =>{
     // doctor details
     fetch(`https://testing-8az5.onrender.com/doctor/list/${param}`)
     .then((res) => res.json())
-    .then((data) => displayDetails(data));
+    .then((data) => displayDocDetails(data));
 
     // doctor review
     fetch(`https://testing-8az5.onrender.com/doctor/review/?doctor_id=${param}`)
@@ -18,30 +18,34 @@ const getParams = () =>{
 
 
 const handleAppointment = () =>{
-    const param = new URLSearchParams(window.location.search).get("doctorID");
+    const doctor_ID = new URLSearchParams(window.location.search).get("doctorID");
     const status = document.getElementsByName("status");
     const selectedStatus = Array.from(status).find((button) => button.checked);
     const symptom = document.getElementById("symptom").value;
     const time = document.getElementById("time-container");
     const selectedTime = time.options[time.selectedIndex]
     // console.log(selectedStatus.value, symptom, selectedTime.value);
+    const patient_id = localStorage.getItem("patient_id");
     const info = {
         appointment_type : selectedStatus.value,
         appointment_status : "Pending",
         time : selectedTime.value,
         symptom : symptom,
         cancel : false,
-        patient : 1,
-        doctor : param,
+        patient : patient_id,
+        doctor : doctor_ID,
     };
-    // console.log(info);
+    console.log(info);
     fetch("https://testing-8az5.onrender.com/appointment/", {
         method:"POST",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(info),
     })
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((data) => {
+        console.log(data);
+        window.location.href="./patient_appointment.html";
+    });
 };
 
 
@@ -72,7 +76,7 @@ const displayDocReview = (reviews) => {
 };
 
 
-const displayDetails = (doctor) =>{
+const displayDocDetails = (doctor) =>{
     const parent = document.getElementById("doc-details");
     const div = document.createElement("div");
     div.classList.add("doc-details-container");
@@ -99,4 +103,37 @@ const displayDetails = (doctor) =>{
 };
 
 
+// const loadPatientId = () => {
+//     const user_id = localStorage.getItem("user_id");
+//     fetch(`https://testing-8az5.onrender.com/patient/list/?user=${user_id}/`)
+//     .then((res) => res.json())
+//     .then((data) => {
+//         console.log(data);
+//         localStorage.setItem("patient_id", data[0].id);
+//     });
+// };
+
+
+const loadPatientId = () => {
+    const user_id = localStorage.getItem("user_id");
+    fetch(`https://testing-8az5.onrender.com/patient/list/?user=${user_id}/`)
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data);
+        const patient = data.find(patient => patient.user == user_id);
+        if (patient) {
+            localStorage.setItem("patient_id", patient.id);
+            console.log(patient);
+        } else {
+            console.error('No patient found for this user.');
+        }
+    })
+    .catch((error) => {
+        console.error('Error fetching patient ID:', error);
+    });
+};
+
+
+
+loadPatientId();
 getParams();

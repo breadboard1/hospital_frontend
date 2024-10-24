@@ -31,14 +31,15 @@
     <div class="login-container">
         <div class="col-md-6">
             <h1 class="title mt-5">Create Your Account</h1>
-            <form action="">
-                <input type="text" class="input" placeholder="Username" required>
-                <input type="text" class="input" placeholder="First Name" required>
-                <input type="text" class="input" placeholder="Last Name" required>
-                <input type="email" class="input" placeholder="Email" required>
-                <input type="password" class="input" placeholder="Password" required>
-                <input type="password" class="input" placeholder="Confirm Password" required>
-                <button class="submit-btn">Register Now</button>
+            <form action="" onsubmit="handleRegistration(event)">
+                <p id="error" class="text-danger"></p>
+                <input id="username" type="text" class="input" placeholder="Username" required>
+                <input id="first_name" type="text" class="input" placeholder="First Name" required>
+                <input id="last_name" type="text" class="input" placeholder="Last Name" required>
+                <input id="email" type="email" class="input" placeholder="Email" required>
+                <input id="password" type="password" class="input" placeholder="Password" required>
+                <input id="confirm_password" type="password" class="input" placeholder="Confirm Password" required>
+                <button class="submit-btn" type="submit">Register Now</button>
                 <p>Already have an account?  <a href="./login.html">Login Now</a></p>
             </form>
         </div>
@@ -83,6 +84,10 @@
 
     <!-- script file -->
     <script src="./app.js"></script>
+    <script src="./auth.js"></script>
+    <script src="./doc_details"></script>
+    <script src="./user_details.js"></script>
+    <script src="./patient_appointment.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
 </body>

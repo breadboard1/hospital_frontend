@@ -10,52 +10,56 @@
 </head>
 <body>
     <header>
+      <!-- navbar section -->
         <nav class="d-flex justify-content-around align-items-center p-3">
             <div class="logo-container d-flex align-items-center gap-2">
                 <img class="" style="width:10%;" src="./hospitao_frontend/logo.avif">
                 <h3>SmartCare</h3>
             </div>
             <div class="menu-container d-flex gap-3">
-                <li class="menu"><a href="./index.html">Home</a></li>
+                <li class="menu">Home</li>
                 <li class="menu">Services</li>
                 <li class="menu">Contact</li>
                 <li class="menu">Login</li>
-            </div>
-        </nav>
 
-    </header>
-
-    <div id="doc-details">
-
-    </div>
-
-    <div class="review-container p-3 mt-5 w-75 m-auto">
-        <h1 class="title">Client Reviews</h1>
-        <p class="description text-center w-50 m-auto">Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.</p>
-        <div class="reviews">
-
-
-            <div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein">
-                <ul id="doc-review-container" class="slider-container py-4">
-
-                </ul>
-
-                <button type="button" class="slider-nav" aria-label="Go left"></button>
-                <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
-
-                <div class="slider-indicators">
-                    <button class="" aria-label="Go to slide"></button>
-                    <button aria-label="Go to slide" class="active"></button>
-                    <button aria-label="Go to slide"></button>
-                    <button aria-label="Go to slide"></button>
-                    <button aria-label="Go to slide"></button>
+                <!-- dropdown -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Profile
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <li><a class="dropdown-item active" href="./index.html">Profile</a></li>
+                      <li><a class="dropdown-item" href="./user_details.html">Your Appointments</a></li>
+                      <li><a class="dropdown-item" href="#">Log Out</a></li>
+                    </ul>
                 </div>
             </div>
+        </nav>
+    </header>
 
-        </div>
+    <!-- appointment container -->
+    <div class="all-appointment-container" id="">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Doctor</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Symptoms</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+      </table>
     </div>
 
 
+
+
+    <!-- footer section -->
     <footer class="p-5">
         <div class="container w-75 m-auto row">
             <div class="col-md-6">
@@ -87,39 +91,10 @@
     </footer>
 
 
-    <!-- modal area -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Submit Your Info</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <input type="radio" name="status" value="Offline"/>Offline
-            <input type="radio" name="status" value="Online"/>Online
-            <br>
-            <input id="symptom" type="text" placeholder="Type Your Symptoms"/>
-            <br>
-
-
-            <select id="time-container" class="p-2 mt-2" name="time">
-                <option value="none">Available Time</option>
-            </select>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button onclick="handleAppointment()" type="button" class="btn btn-primary">Submit Now</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
     <!-- script file -->
     <script src="./app.js"></script>
     <script src="./auth.js"></script>
-    <script src="./doc_details.js"></script>
+    <script src="./doc_details"></script>
     <script src="./user_details.js"></script>
     <script src="./patient_appointment.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

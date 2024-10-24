@@ -32,9 +32,9 @@
         <div class="col-md-6">
             <h1 class="title mt-5"> Login Now</h1>
             <form action="">
-                <input type="email" class="input" placeholder="Email" required>
-                <input type="password" class="input" placeholder="Password" required>
-                <button class="submit-btn">Login</button>
+                <input id="login-username" type="text" class="input" placeholder="Username" required>
+                <input id="login-password" type="password" class="input" placeholder="Password" required>
+                <button onclick="handleLogin(event)" class="submit-btn">Login</button>
                 <p>Don't have an account?  <a href="./registration.html">Register Now</a></p>
             </form>
         </div>
@@ -79,6 +79,7 @@
 
     <!-- script file -->
     <script src="./app.js"></script>
+    <script src="./auth.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
 </body>

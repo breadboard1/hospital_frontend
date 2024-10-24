@@ -10,6 +10,7 @@
 </head>
 <body>
     <header>
+        <!-- navbar -->
         <nav class="d-flex justify-content-around align-items-center p-3">
             <div class="logo-container d-flex align-items-center gap-2">
                 <img class="" style="width:10%;" src="./hospitao_frontend/logo.avif">
@@ -20,6 +21,17 @@
                 <li class="menu">Services</li>
                 <li class="menu">Contact</li>
                 <li class="menu"><a href="./login.html">Login</a></li>
+                <!-- dropdown -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Profile
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <li><a class="dropdown-item active" href="./user_details.html">Profile</a></li>
+                      <li><a class="dropdown-item" href="./patient_appointment.html">Your Appointments</a></li>
+                      <li><a class="dropdown-item" href="#">Log Out</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -68,7 +80,7 @@
             <div class="col-md-4 d-flex gap-3 justify-content-center">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Designation
+                        Designation
                     </button>
                     <ul id="drop-deg" class="dropdown-menu dropdown-menu-dark">
 
@@ -77,7 +89,7 @@
 
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Specialization
+                        Specialization
                     </button>
                     <ul id="drop-spe" class="dropdown-menu dropdown-menu-dark">
 
@@ -161,6 +173,10 @@
 
     <!-- script file -->
     <script src="./app.js"></script>
+    <script src="./auth.js"></script>
+    <script src="./doc_details"></script>
+    <script src="./user_details.js"></script>
+    <script src="./patient_appointment.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
 </body>
