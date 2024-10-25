@@ -13,10 +13,12 @@ const loadAppointments = () => {
             <td>${item.appointment_type}</td>
             <td>${item.appointment_status}</td>
             <td>${item.symptom}</td>
-            <td>X</td>
+            ${
+                item.appointment_status == "Pending" ? `<td class="text-danger">X</td>` : `<td>X</td>`
+            }
             `;
             parent.appendChild(tr);
-        })
+        });
     });
 };
 
